@@ -1,39 +1,14 @@
 {
   "tasks": [
     {
-      "id": 3,
-      "title": "Fix bug on admin page",
-      "status": "closed"
-    },
-    {
-      "id": 4,
-      "title": "Implement feature C on backend",
-      "status": "open"
-    },
-    {
-      "id": 5,
-      "title": "Implement feature D on backend",
-      "status": "closed"
-    },
-    {
-      "id": 6,
-      "title": "Implement feature C on frontend",
-      "status": "open"
-    },
-    {
       "id": 7,
       "title": "Implement feature D on frontend",
-      "status": "open"
+      "status": "closed"
     },
     {
       "id": 8,
       "title": "Implement toggle on frontend",
       "status": "closed"
-    },
-    {
-      "id": 9,
-      "title": "Implement feature E on backend",
-      "status": "open"
     },
     {
       "id": 10,
@@ -43,21 +18,11 @@
     {
       "id": 11,
       "title": "Implement feature E on frontend",
-      "status": "open"
+      "status": "closed"
     },
     {
       "id": 12,
       "title": "Implement feature F on frontend",
-      "status": "closed"
-    },
-    {
-      "id": 13,
-      "title": "Implement feature G on backend",
-      "status": "open"
-    },
-    {
-      "id": 14,
-      "title": "Implement feature H on backend",
       "status": "closed"
     },
     {

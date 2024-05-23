@@ -19,7 +19,7 @@ export async function updateToClosed(id: number) {
     headers: {
       "Content-Type": "application/json",
     },
-    method: "PATCH",
+    method: "PATCH", // Alterar só uma parte do objeto
     body: JSON.stringify({
       status: "closed",
     }),
