@@ -1,26 +1,6 @@
 {
   "tasks": [
     {
-      "id": 7,
-      "title": "Implement feature D on frontend",
-      "status": "closed"
-    },
-    {
-      "id": 8,
-      "title": "Implement toggle on frontend",
-      "status": "closed"
-    },
-    {
-      "id": 10,
-      "title": "Implement feature F on backend",
-      "status": "closed"
-    },
-    {
-      "id": 11,
-      "title": "Implement feature E on frontend",
-      "status": "closed"
-    },
-    {
       "id": 12,
       "title": "Implement feature F on frontend",
       "status": "closed"

@@ -18,7 +18,7 @@ export const ListContainer = tw.ul`
   justify-between
 `;
 
-type ListItemProps = { $open: string };
+type ListItemProps = { $open: boolean };
 
 export const ListItem = tw.li<ListItemProps>`
   relative
