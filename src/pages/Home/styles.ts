@@ -6,6 +6,7 @@ bg-gray-50
  p-12
  flex
  justify-center
+ 
 `;
 
 export const Container = tw.div`

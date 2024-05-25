@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef, useState } from "react";
 import { Can, GuardContext } from "../../guards/GuardContext";
 import { fetchTasks, create, removeTask, updateToClosed } from "./services";
 import {
@@ -26,6 +26,7 @@ type Task = {
 export const Home = () => {
   const ability = useContext(GuardContext);
   const [tasks, setTasks] = React.useState<Task[]>([]);
+  const [newTaskTitle, setNewTaskTitle] = useState("");
 
   function refresh() {
     fetchTasks().then((tasks) => setTasks(tasks));
@@ -60,12 +61,15 @@ export const Home = () => {
 
   const onSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-    const formData = new FormData(event.target as HTMLFormElement);
-    const title = formData.get("title")?.toString();
+    try {
+      await create(newTaskTitle);
 
-    await create(title!);
+      setNewTaskTitle("");
 
-    refresh();
+      refresh();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -75,7 +79,13 @@ export const Home = () => {
 
         <Can I="create" a="Task">
           <Form onSubmit={onSubmit}>
-            <Input type="text" name="title" required />
+            <Input
+              type="text"
+              name="title"
+              value={newTaskTitle}
+              onChange={(e) => setNewTaskTitle(e.target.value)}
+              required
+            />
             <NewButton type="submit">Criar nova tarefa</NewButton>
           </Form>
         </Can>
@@ -95,11 +105,9 @@ export const Home = () => {
                     </DoneButton>
                   </Can>
                 )}
-                {/* <Can I="delete" a="Task"> */}
                 <RemoveButton onClick={() => onRemove(task.id)}>
                   Excluir
                 </RemoveButton>
-                {/* </Can> */}
               </ActionContainer>
             </ListItem>
           ))}

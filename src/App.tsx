@@ -3,6 +3,7 @@ import { buildAbility } from "./guards/ability";
 import { GuardContext } from "./guards/GuardContext";
 import { getAbilitiesByUser, UserType } from "./guards/userAbilities";
 import { Home } from "./pages/Home";
+import { HomeDiv } from "./style";
 
 function App() {
   const [user, setUser] = useState<UserType>("user");
@@ -11,11 +12,11 @@ function App() {
 
   return (
     <GuardContext.Provider value={ability}>
-      <div className="App">
+      <HomeDiv>
         <button onClick={() => setUser("user")}>User</button>
         <button onClick={() => setUser("admin")}>Admin</button>
         <Home />
-      </div>
+      </HomeDiv>
     </GuardContext.Provider>
   );
 }
